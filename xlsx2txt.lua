@@ -144,7 +144,11 @@ local function read_sharedstrings(sharedstrings, result)
 	for _, v in ipairs(sharedstrings) do
 		if v.xml == "si" and v[1] then
 			if v[1].xml == "t" then
-				table.insert(result, v[1][1])
+				if v[1][1] then
+					table.insert(result, v[1][1])
+				else
+					table.insert(result, "")
+				end
 			else
 				-- NOTE: remove font <r> <rPr> ...
 				-- http://msdn.microsoft.com/en-us/library/office/gg278314(v=office.15).aspx
