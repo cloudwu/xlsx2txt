@@ -36,7 +36,7 @@ main(int argc, const char *argv[]) {
 }
 ]]
 
-local f = assert(io.open(...,"rb"))
+local f = assert(io.open(...,"r"))
 local tmp = {}
 local escape = {
 	['"'] = '\\"',
