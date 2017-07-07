@@ -274,6 +274,9 @@ end
 for _,v in ipairs(sheets) do
 	local name = v.name
 	for _,v in ipairs(v.sheetData) do
+		if v.f then
+			print(string.format("%s (%s) %s = %s",filename,name,v.r,escape_value(v.f)))
+		end
 		print(string.format("%s (%s) %s : %s",filename,name,v.r,escape_value(v.v)))
 	end
 end
