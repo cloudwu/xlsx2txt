@@ -250,7 +250,7 @@ local function load_xlsx(filename)
 				end
 			end
 		end
-		for _,v in ipairs(sheets) do
+		for _,v in pairs(sheets) do
 			load_sheet(self, v)
 		end
 	end
@@ -271,7 +271,7 @@ local function escape_value(s)
 	return s
 end
 
-for _,v in ipairs(sheets) do
+for _,v in pairs(sheets) do
 	local name = v.name
 	for _,v in ipairs(v.sheetData) do
 		if v.f then
